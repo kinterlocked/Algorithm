@@ -16,10 +16,11 @@
                 StringTokenizer st = new StringTokenizer(br.readLine());
                 StringBuilder sb = new StringBuilder();
 
-                int A = Integer.parseInt(st.nextToken());
-                int B = Integer.parseInt(st.nextToken());
+                long A = Long.parseLong(st.nextToken());
+                long B = Long.parseLong(st.nextToken());
 
-                sb.append((A+B)*(A-B)).append("\n");
-                System.out.println(sb.toString());
+                long result = (A+B)*(A-B);
+
+                System.out.println(result);
             }
         }
