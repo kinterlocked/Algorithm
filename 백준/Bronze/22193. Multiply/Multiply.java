@@ -16,9 +16,9 @@
                 StringTokenizer st = new StringTokenizer(br.readLine());
                 StringBuilder sb = new StringBuilder();
 
-                long N = Long.parseLong(br.readLine());
-                long M = Long.parseLong(br.readLine());
+                BigInteger N = new BigInteger(br.readLine());
+                BigInteger M = new BigInteger(br.readLine());
 
-                System.out.println(N * M);
+                System.out.println(N.multiply(M));
             }
         }
