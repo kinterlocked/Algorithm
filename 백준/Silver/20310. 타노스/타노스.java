@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
 
         String word = br.readLine();
         int[] arr= new int[2];
@@ -15,12 +16,30 @@ public class Main {
                 arr[1]++;
             }
         }
-        String result = "";
-        for(int i = 0; i < 2; i++){
-            for(int j = 0; j < (arr[i] / 2); j++){
-                result += i;
+        int zero = arr[0] / 2;
+        int one = arr[1] / 2;
+        int zCount = 0;
+        int oCount = 0;
+        sb.append(word);
+        for(int i = sb.length() - 1; i >= 0; i--) {
+            if(sb.charAt(i) == '0') {
+                sb.deleteCharAt(i);
+                zCount++;
+                if(zCount == zero) {
+                    break;
+                }
             }
         }
-        System.out.println(result);
+        for(int i = 0; i < sb.length(); i++) {
+            if(sb.charAt(i) == '1') {
+                sb.deleteCharAt(i);
+                oCount++;
+                i--;
+                if(oCount == one) {
+                    break;
+                }
+            }
+        }
+        System.out.println(sb.toString());
     }
 }
